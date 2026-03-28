@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Board - Focus Flow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/pages/landing.css"> 
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/pages/kanban.css">
+</head>
+<body>
+<div class="app-container">
+    <aside class="sidebar" id="app-sidebar" aria-label="Main Navigation">
+        <div class="sidebar-logo" style="margin-bottom: 32px;">Focus<span style="color: var(--primary-color)">Flow</span></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="dashboard.html" class="nav-link"><i data-feather="grid"></i> Dashboard</a></li>
+            <li class="nav-item"><a href="task-board.html" class="nav-link active"><i data-feather="check-square"></i> Tasks</a></li>
+            <li class="nav-item"><a href="timer.html" class="nav-link"><i data-feather="clock"></i> Sessions</a></li>
+            <li class="nav-item"><a href="analytics.html" class="nav-link"><i data-feather="bar-chart-2"></i> Analytics</a></li>
+            <li class="nav-item"><a href="settings.html" class="nav-link"><i data-feather="settings"></i> Settings</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="help.html" class="nav-link"><i data-feather="help-circle"></i> Help Center</a>
+            <a href="#" class="nav-link" id="logout-btn"><i data-feather="log-out"></i> Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <button id="sidebar-toggle" aria-label="Toggle Sidebar" style="background: none; border: none; cursor: pointer; color: var(--text-main);"><i data-feather="sidebar"></i></button>
+                <h2>Projects</h2>
+            </div>
+            <div class="topbar-actions">
+                <div class="user-avatar" tabindex="0" style="width: 36px; height: 36px; border-radius: 50%; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--text-muted);">U</div>
+            </div>
+        </header>
+
+        <div class="board-header">
+            <div class="board-title-group">
+                <div style="font-size: 12px; color: var(--primary-color); font-weight: 700; margin-bottom: 4px;">MY WORKSPACE</div>
+                <h1>Task Board</h1>
+                <p>Manage your workflow and earn XP for every completed task.</p>
+            </div>
+            <div class="board-meta">
+                <button class="btn btn-primary"><i data-feather="plus" style="width: 16px; margin-right: 6px;"></i> Create Task</button>
+            </div>
+        </div>
+
+        <dialog id="task-modal" class="task-modal">
+            <h2 style="margin-bottom: 16px;">Create New Task</h2>
+            <form id="task-form">
+                <label style="font-size: 14px; font-weight: 600;">Task Title</label>
+                <input type="text" id="task-title" placeholder="e.g., Build Database Schema" required>
+                <label style="font-size: 14px; font-weight: 600;">Description</label>
+                <textarea id="task-desc" rows="3" placeholder="Add some details..." required></textarea>
+                <label style="font-size: 14px; font-weight: 600;">Priority</label>
+                <select id="task-priority">
+                    <option value="MEDIUM">MEDIUM</option>
+                    <option value="HIGH">HIGH</option>
+                    <option value="LOW">LOW</option>
+                </select>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-task-btn" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Task</button>
+                </div>
+            </form>
+        </dialog>
+
+        <div class="kanban-board">
+            <div class="kanban-column">
+                <div class="column-header"><span class="column-title">TO DO</span><span class="column-count">0</span></div>
+                <div class="column-body"><div class="column-empty"><i data-feather="plus" style="margin-right: 8px;"></i> Drop tasks here</div></div>
+            </div>
+            <div class="kanban-column">
+                <div class="column-header"><span class="column-title">IN PROGRESS</span><span class="column-count">0</span></div>
+                <div class="column-body"><div class="column-empty"><i data-feather="plus" style="margin-right: 8px;"></i> Drop tasks here</div></div>
+            </div>
+            <div class="kanban-column">
+                <div class="column-header"><span class="column-title">DONE</span><span class="column-count">0</span></div>
+                <div class="column-body"><div class="column-empty"><i data-feather="plus" style="margin-right: 8px;"></i> Drop tasks here</div></div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/session.js"></script>
+<script src="../assets/js/global.js"></script>
+<script src="../assets/js/kanban.js"></script>
+</body>
+</html>

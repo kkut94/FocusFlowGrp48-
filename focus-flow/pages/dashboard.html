@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Focus Flow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/pages/landing.css"> 
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+</head>
+<body>
+<div class="app-container">
+    <aside class="sidebar" id="app-sidebar" aria-label="Main Navigation">
+        <div class="sidebar-logo" style="margin-bottom: 32px;">Focus<span style="color: var(--primary-color)">Flow</span></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="dashboard.html" class="nav-link active"><i data-feather="grid"></i> Dashboard</a></li>
+            <li class="nav-item"><a href="task-board.html" class="nav-link"><i data-feather="check-square"></i> Tasks</a></li>
+            <li class="nav-item"><a href="timer.html" class="nav-link"><i data-feather="clock"></i> Sessions</a></li>
+            <li class="nav-item"><a href="analytics.html" class="nav-link"><i data-feather="bar-chart-2"></i> Analytics</a></li>
+            <li class="nav-item"><a href="settings.html" class="nav-link"><i data-feather="settings"></i> Settings</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="help.html" class="nav-link"><i data-feather="help-circle"></i> Help Center</a>
+            <a href="#" class="nav-link" id="logout-btn"><i data-feather="log-out"></i> Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <button id="sidebar-toggle" aria-label="Toggle Sidebar" style="background: none; border: none; cursor: pointer; color: var(--text-main);"><i data-feather="sidebar"></i></button>
+                <h2>Dashboard</h2>
+            </div>
+            <div class="topbar-actions">
+                <button aria-label="Notifications" style="background: none; border: none; cursor: pointer; color: var(--text-muted);"><i data-feather="bell"></i></button>
+                <div class="user-avatar" tabindex="0" style="width: 36px; height: 36px; border-radius: 50%; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--text-muted);">U</div>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="left-column">
+                <div class="greeting-section">
+                    <h3>Welcome to FocusFlow!</h3>
+                    <p>Let's set up your first productive day.</p>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-green"><i data-feather="check-circle"></i></div>
+                        <p style="font-size: 13px; color: var(--text-muted);">Tasks Completed</p>
+                        <div class="stat-val-row"><h2 style="font-size: 24px;">0</h2></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-purple"><i data-feather="clock"></i></div>
+                        <p style="font-size: 13px; color: var(--text-muted);">Focus Sessions</p>
+                        <div class="stat-val-row"><h2 style="font-size: 24px;">0</h2></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-orange"><i data-feather="zap"></i></div>
+                        <p style="font-size: 13px; color: var(--text-muted);">Focus Hours</p>
+                        <div class="stat-val-row"><h2 style="font-size: 24px;">0.0</h2></div>
+                    </div>
+                </div>
+
+                <div class="chart-card stat-card" style="margin-bottom: 24px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 24px;">
+                        <div>
+                            <h4 style="font-size: 16px;">Weekly Productivity</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">No data for this week</p>
+                        </div>
+                    </div>
+                    <div class="empty-state" style="height: 180px;">
+                        <i data-feather="bar-chart" class="empty-state-icon" style="width: 32px; height: 32px;"></i>
+                        <p>Complete focus sessions to see your weekly trends.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <button class="btn btn-primary btn-lg" style="width: 100%; display: flex; justify-content: space-between;" onclick="window.location.href='timer.html'">
+                    <span><i data-feather="play-circle" style="width: 18px; margin-right: 8px;"></i> Start Session</span>
+                    <i data-feather="arrow-right" style="width: 18px;"></i>
+                </button>
+
+                <div class="xp-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;" class="xp-header">
+                        <div>
+                            <h3 style="font-size: 18px; font-weight: 700;">XP Level 1</h3>
+                            <p style="font-size: 13px; opacity: 0.8;">Novice</p>
+                        </div>
+                        <i data-feather="award" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600;">
+                        <span>Progress</span><span>0%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                    <p style="font-size: 12px; opacity: 0.8; text-align: center; margin-top: 8px;">200 XP more to reach Level 2</p>
+                </div>
+
+                <div class="tasks-card">
+                    </div>
+
+                <div class="streak-card">
+                    <h4 style="font-size: 16px; margin-bottom: 4px;">Daily Streak 🧊</h4>
+                    <p style="font-size: 13px; color: #9ca3af;">Complete a session today to start your streak!</p>
+                    <div class="streak-days">
+                        <div class="day-circle">M</div><div class="day-circle">T</div><div class="day-circle">W</div>
+                        <div class="day-circle">T</div><div class="day-circle">F</div><div class="day-circle">S</div><div class="day-circle">S</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/session.js"></script>
+<script src="../assets/js/global.js"></script>
+<script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

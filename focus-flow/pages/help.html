@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - Focus Flow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/pages/landing.css"> 
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+</head>
+<body>
+<div class="app-container">
+    
+    <aside class="sidebar" id="app-sidebar" aria-label="Main Navigation">
+        <div class="sidebar-logo" style="margin-bottom: 32px;">Focus<span style="color: var(--primary-color)">Flow</span></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="dashboard.html" class="nav-link"><i data-feather="grid"></i> Dashboard</a></li>
+            <li class="nav-item"><a href="task-board.html" class="nav-link"><i data-feather="check-square"></i> Tasks</a></li>
+            <li class="nav-item"><a href="timer.html" class="nav-link"><i data-feather="clock"></i> Sessions</a></li>
+            <li class="nav-item"><a href="analytics.html" class="nav-link"><i data-feather="bar-chart-2"></i> Analytics</a></li>
+            <li class="nav-item"><a href="settings.html" class="nav-link"><i data-feather="settings"></i> Settings</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="help.html" class="nav-link active"><i data-feather="help-circle"></i> Help Center</a>
+            <a href="#" class="nav-link" id="logout-btn"><i data-feather="log-out"></i> Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <button id="sidebar-toggle" aria-label="Toggle Sidebar" style="background: none; border: none; cursor: pointer; color: var(--text-main);">
+                    <i data-feather="sidebar"></i>
+                </button>
+                <h2>Help & Support</h2>
+            </div>
+            <div class="topbar-actions">
+                <button aria-label="Notifications" style="background: none; border: none; cursor: pointer; color: var(--text-muted);"><i data-feather="bell"></i></button>
+                <div class="user-avatar" tabindex="0" style="width: 36px; height: 36px; border-radius: 50%; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--text-muted);">U</div>
+            </div>
+        </header>
+
+        <div class="analytics-header">
+            <p>Find answers to common questions or reach out to our team.</p>
+        </div>
+
+        <div class="dashboard-grid" style="grid-template-columns: 2fr 1fr;">
+            <div class="tasks-card">
+                <h3 style="margin-bottom: 24px;">Frequently Asked Questions</h3>
+                
+                <details style="margin-bottom: 16px; border-bottom: 1px solid #e5e7eb; padding-bottom: 16px;">
+                    <summary style="font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        How do I earn XP? <i data-feather="chevron-down" style="width: 16px;"></i>
+                    </summary>
+                    <p style="color: var(--text-muted); margin-top: 12px; font-size: 14px;">You earn 50 XP for every Focus Session you complete. At this time, Tasks do not grant XP, but will in an upcoming patch!</p>
+                </details>
+
+                <details style="margin-bottom: 16px; border-bottom: 1px solid #e5e7eb; padding-bottom: 16px;">
+                    <summary style="font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        How is my Daily Streak calculated? <i data-feather="chevron-down" style="width: 16px;"></i>
+                    </summary>
+                    <p style="color: var(--text-muted); margin-top: 12px; font-size: 14px;">Your streak increases by 1 for every consecutive day you complete at least one Focus Session. Don't break the chain!</p>
+                </details>
+
+                <details style="margin-bottom: 16px; padding-bottom: 16px;">
+                    <summary style="font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        How do I change my Timer lengths? <i data-feather="chevron-down" style="width: 16px;"></i>
+                    </summary>
+                    <p style="color: var(--text-muted); margin-top: 12px; font-size: 14px;">Navigate to the Settings tab in the sidebar. You can drag the sliders to adjust the length of your Focus, Short Break, and Long Break times.</p>
+                </details>
+            </div>
+
+            <div class="xp-card" style="height: fit-content; background: var(--dark-surface);">
+                <h3 style="margin-bottom: 16px; color: white;">Still need help?</h3>
+                <p style="font-size: 13px; opacity: 0.9; margin-bottom: 24px; color: #e5e7eb;">Our support team is available Monday through Friday to assist you.</p>
+                
+                <a href="mailto:support@focusflow.com" class="btn btn-secondary" style="width: 100%; margin-bottom: 12px; color: var(--text-main); display: flex; justify-content: center; align-items: center;">
+                    <i data-feather="mail" style="margin-right: 8px; width: 16px;"></i> Email Support
+                </a>
+                <a href="tel:18005550199" class="btn btn-secondary" style="width: 100%; color: var(--text-main); display: flex; justify-content: center; align-items: center;">
+                    <i data-feather="phone" style="margin-right: 8px; width: 16px;"></i> Call Us
+                </a>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/session.js"></script>
+<script src="../assets/js/global.js"></script>
+</body>
+</html>

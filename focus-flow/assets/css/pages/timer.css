@@ -1,0 +1,20 @@
+/* assets/css/pages/timer.css */
+.timer-container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: calc(100vh - 120px); max-width: 800px; margin: 0 auto; }
+.timer-toggles { display: flex; background: white; padding: 6px; border-radius: 30px; box-shadow: var(--shadow-sm); margin-bottom: 48px; gap: 8px; flex-wrap: wrap; justify-content: center;}
+.toggle-btn { padding: 8px 24px; border: none; background: transparent; border-radius: 20px; font-size: 14px; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all 0.2s; font-family: var(--font-family); }
+.toggle-btn.active { background: var(--bg-color); color: var(--primary-color); box-shadow: var(--shadow-sm); }
+.toggle-btn:hover:not(.active) { color: var(--text-main); }
+
+/* The Depleting Color Ring */
+.timer-circle-wrapper { width: 340px; height: 340px; border-radius: 50%; background: conic-gradient(var(--primary-color) 100%, #e5e7eb 0%); display: flex; align-items: center; justify-content: center; margin-bottom: 32px; box-shadow: var(--shadow-lg); transition: background 1s linear; }
+.timer-circle-inner { width: 316px; height: 316px; border-radius: 50%; background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset var(--shadow-sm); }
+.time-display { font-size: 80px; font-weight: 800; color: var(--text-main); line-height: 1; letter-spacing: -2px; margin-bottom: 8px; }
+.time-label { font-size: 13px; color: var(--text-muted); font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+
+.timer-controls { display: flex; align-items: center; gap: 24px; margin-bottom: 48px; }
+.control-btn { width: 48px; height: 48px; border-radius: 50%; border: none; background: white; color: var(--text-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-sm); transition: all 0.2s; }
+.control-btn:hover { background: #f3f4f6; color: var(--text-main); }
+.timer-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; }
+.t-stat-card { background: white; padding: 20px; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-sm); }
+.t-stat-label { font-size: 11px; color: var(--text-muted); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.t-stat-value { font-size: 20px; font-weight: 700; color: var(--text-main); }

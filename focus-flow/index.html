@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Flow - Stay Focused. Get things done.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/pages/landing.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">Focus<span style="color: var(--primary-color)">Flow</span></div>
+            <div class="nav-links">
+                <a href="pages/login.html" class="nav-link">Login</a>
+                <a href="pages/signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </nav>
+
+        <main class="hero">
+            <div class="hero-content">
+                <div class="badge"><i data-feather="star" style="width: 14px; margin-right: 4px;"></i> NEW: XP REWARD SYSTEM</div>
+                <h1 class="hero-title">Stay focused.<br><span class="text-primary">Get things<br>done.</span></h1>
+                <p class="hero-subtitle">Master your productivity with task management, Pomodoro focus timers, and deep analytics. Earn XP as you complete tasks and focus sessions.</p>
+                <div class="hero-actions">
+                    <a href="pages/signup.html" class="btn btn-primary btn-lg">Get Started Free &rarr;</a>
+                    <a href="pages/dashboard.html" class="btn btn-secondary btn-lg" onclick="localStorage.setItem('guestMode', 'true')">
+                        <i data-feather="play-circle" style="margin-right: 8px;"></i> Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image-placeholder">
+                <div style="display: flex; height: 100%; align-items: center; justify-content: center; color: var(--primary-color); opacity: 0.5;">
+                    <i data-feather="layout" style="width: 64px; height: 64px;"></i>
+                </div>
+            </div>
+        </main>
+
+        <section class="stats-container">
+            <div class="stat-card">
+                <p class="stat-label">Active Users</p>
+                <div class="stat-value-row">
+                    <h2>10k+</h2>
+                    <span class="stat-increase" style="color: var(--success-green);"><i data-feather="trending-up" style="width: 14px;"></i> 12%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <p class="stat-label">Focus Hours</p>
+                <div class="stat-value-row">
+                    <h2>250k+</h2>
+                    <span class="stat-increase" style="color: var(--success-green);"><i data-feather="trending-up" style="width: 14px;"></i> 10%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <p class="stat-label">Tasks Completed</p>
+                <div class="stat-value-row">
+                    <h2>1M+</h2>
+                    <span class="stat-increase" style="color: var(--success-green);"><i data-feather="trending-up" style="width: 14px;"></i> 25%</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/supabase.js"></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/global.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Focus Flow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/pages/landing.css"> 
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/pages/settings.css">
+</head>
+<body>
+<div class="app-container">
+    
+    <aside class="sidebar" id="app-sidebar" aria-label="Main Navigation">
+        <div class="sidebar-logo" style="margin-bottom: 32px;">Focus<span style="color: var(--primary-color)">Flow</span></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="dashboard.html" class="nav-link"><i data-feather="grid"></i> Dashboard</a></li>
+            <li class="nav-item"><a href="task-board.html" class="nav-link"><i data-feather="check-square"></i> Tasks</a></li>
+            <li class="nav-item"><a href="timer.html" class="nav-link"><i data-feather="clock"></i> Sessions</a></li>
+            <li class="nav-item"><a href="analytics.html" class="nav-link"><i data-feather="bar-chart-2"></i> Analytics</a></li>
+            <li class="nav-item"><a href="settings.html" class="nav-link active"><i data-feather="settings"></i> Settings</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="help.html" class="nav-link"><i data-feather="help-circle"></i> Help Center</a>
+            <a href="#" class="nav-link" id="logout-btn"><i data-feather="log-out"></i> Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <button id="sidebar-toggle" aria-label="Toggle Sidebar" style="background: none; border: none; cursor: pointer; color: var(--text-main);">
+                    <i data-feather="sidebar"></i>
+                </button>
+                <h2>Settings</h2>
+            </div>
+            <div class="topbar-actions">
+                <button aria-label="Notifications" style="background: none; border: none; cursor: pointer; color: var(--text-muted);"><i data-feather="bell"></i></button>
+                <div class="user-avatar" tabindex="0" style="width: 36px; height: 36px; border-radius: 50%; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--text-muted);">U</div>
+            </div>
+        </header>
+
+        <div class="analytics-header">
+            <p>Manage your focus sessions and preferences</p>
+        </div>
+
+        <div class="settings-section">
+            <h3 style="color: var(--primary-color); display: flex; align-items: center; gap: 8px;"><i data-feather="clock" style="width: 18px;"></i> Timer Configuration</h3>
+            
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4>Pomodoro Duration</h4>
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="10" max="60" value="25" id="pomodoro-slider">
+                    <span class="slider-value">25m</span>
+                </div>
+            </div>
+
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4>Short Break Duration</h4>
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="1" max="15" value="5" id="short-break-slider">
+                    <span class="slider-value">5m</span>
+                </div>
+            </div>
+
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4>Long Break Duration</h4>
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="10" max="30" value="15" id="long-break-slider">
+                    <span class="slider-value">15m</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h3 style="color: var(--text-muted); display: flex; align-items: center; gap: 8px;"><i data-feather="sliders" style="width: 18px;"></i> Preferences</h3>
+            
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4>Desktop Notifications</h4>
+                    <p>Receive alerts when session ends</p>
+                </div>
+                <label class="switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+                    <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                    <span class="slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--primary-color); transition: .4s; border-radius: 24px;"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="settings-actions">
+            <button class="btn btn-secondary" onclick="window.location.reload()">Discard</button>
+            <button class="btn btn-primary"><i data-feather="save" style="margin-right: 8px; width: 16px;"></i> Save Changes</button>
+        </div>
+    </main>
+</div>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/session.js"></script>
+<script src="../assets/js/global.js"></script>
+<script src="../assets/js/settings.js"></script>
+</body>
+</html>

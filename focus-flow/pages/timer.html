@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer - Focus Flow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/pages/landing.css"> 
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/pages/timer.css">
+</head>
+<body>
+<div class="app-container">
+    <aside class="sidebar" id="app-sidebar" aria-label="Main Navigation">
+        <div class="sidebar-logo" style="margin-bottom: 32px;">Focus<span style="color: var(--primary-color)">Flow</span></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="dashboard.html" class="nav-link"><i data-feather="grid"></i> Dashboard</a></li>
+            <li class="nav-item"><a href="task-board.html" class="nav-link"><i data-feather="check-square"></i> Tasks</a></li>
+            <li class="nav-item"><a href="timer.html" class="nav-link active"><i data-feather="clock"></i> Sessions</a></li>
+            <li class="nav-item"><a href="analytics.html" class="nav-link"><i data-feather="bar-chart-2"></i> Analytics</a></li>
+            <li class="nav-item"><a href="settings.html" class="nav-link"><i data-feather="settings"></i> Settings</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="help.html" class="nav-link"><i data-feather="help-circle"></i> Help Center</a>
+            <a href="#" class="nav-link" id="logout-btn"><i data-feather="log-out"></i> Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <button id="sidebar-toggle" aria-label="Toggle Sidebar" style="background: none; border: none; cursor: pointer; color: var(--text-main);"><i data-feather="sidebar"></i></button>
+                <h2>Focus Session</h2>
+            </div>
+            <div class="topbar-actions">
+                <div style="background: var(--warning-orange); color: white; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 6px;">
+                    <i data-feather="award" style="width: 14px;"></i> 0 XP
+                </div>
+                <div class="user-avatar" tabindex="0" style="width: 36px; height: 36px; border-radius: 50%; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--text-muted);">U</div>
+            </div>
+        </header>
+
+        <div class="timer-container">
+            <div class="timer-toggles">
+                <button class="toggle-btn active">Focus</button>
+                <button class="toggle-btn">Short Break</button>
+                <button class="toggle-btn">Long Break</button>
+            </div>
+
+            <div class="timer-circle-wrapper">
+                <div class="timer-circle-inner">
+                    <div class="time-display">25:00</div>
+                    <div class="time-label">MINUTES REMAINING</div>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); font-size: 14px; font-weight: 500; margin-bottom: 24px;">
+                <i data-feather="star" style="width: 16px; margin-right: 4px; vertical-align: text-bottom; color: var(--warning-orange);"></i> Complete session to earn <strong>+50 XP</strong>
+            </p>
+
+            <div class="timer-controls">
+                <button class="control-btn" title="Reset Session"><i data-feather="rotate-ccw"></i></button>
+                <button class="btn btn-primary start-btn" style="padding: 0 48px; height: 56px; border-radius: 28px; font-size: 18px; box-shadow: 0 8px 16px rgba(99, 91, 255, 0.2);">
+                    <i data-feather="play" style="margin-right: 8px;"></i> Start
+                </button>
+                <button class="control-btn" title="Skip Session"><i data-feather="fast-forward"></i></button>
+            </div>
+
+            <div class="timer-stats">
+                <div class="t-stat-card">
+                    <div class="t-stat-label">TODAY'S FOCUS</div>
+                    <div class="t-stat-value">0.0 <span style="font-size: 14px; color: var(--text-muted); font-weight: normal;">hrs</span></div>
+                </div>
+                <div class="t-stat-card">
+                    <div class="t-stat-label">CURRENT STREAK</div>
+                    <div class="t-stat-value">0 <span style="font-size: 14px; color: var(--text-muted); font-weight: normal;">days</span></div>
+                </div>
+                <div class="t-stat-card">
+                    <div class="t-stat-label">DAILY RANK</div>
+                    <div class="t-stat-value">--</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/session.js"></script>
+<script src="../assets/js/global.js"></script>
+<script src="../assets/js/timer.js"></script>
+</body>
+</html>
